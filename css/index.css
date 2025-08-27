@@ -13,6 +13,13 @@ body {
   color: #333;
 }
 
+hr {
+  width: 100%;
+  height: 4px;
+  background-color: #0c483a;
+  border: none;
+}
+
 /* Top Contact Bar - Sticky */
 .contact-bar {
   background: rgba(255, 255, 255, 0);
@@ -108,7 +115,9 @@ body {
 
 /* Hero Section */
 .hero {
-  background: var(--logoGreen);
+  /* background: var(--logoGreen); */
+  background: linear-gradient(to top, #000000db 0%, #00745989 100%),
+    url("/img/grass.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -121,9 +130,10 @@ body {
 
 .hero-content h1 {
   font-size: 4rem;
+  font-family: Helvetica, arial, sans-serif;
   margin-bottom: 20px;
   font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero-content .subtitle {
