@@ -1,8 +1,21 @@
 :root {
-  --logoGreen: #007459;
+  /* Primary Color Palette */
+  --primaryGreen: #007358; /* Main brand color */
+  --darkGreen: #0c483a; /* Darker accent */
+  --mediumGreen: #43c8a9; /* Medium green-cyan */
+  --lightGreen: #79f2d6; /* Light cyan */
+  --paleMint: #aaffeb; /* Pale mint accent */
+
+  /* Typography */
   --HeaderFont: "Montserrat", sans-serif;
   --BodyFont: "Lato", sans-serif;
-  /* --BodyFont:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+
+  /* Additional utility colors */
+  --white: #ffffff;
+  --lightGray: #f8f9fa;
+  --mediumGray: #666;
+  --darkGray: #333;
+  --black: #1a1a1a;
 }
 * {
   margin: 0;
@@ -11,22 +24,22 @@
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: var(--BodyFont);
   line-height: 1.6;
-  color: #333;
+  color: var(--darkGray);
 }
 
 hr {
   width: 100%;
   height: 4px;
-  background-color: #0c483a;
+  background-color: var(--darkGreen);
   border: none;
 }
 
 /* Top Contact Bar - Sticky */
 .contact-bar {
   background: rgba(255, 255, 255, 0);
-  color: #333;
+  color: var(--darkGray);
   padding: 8px 0;
   font-size: 14px;
   position: fixed;
@@ -34,7 +47,6 @@ hr {
   left: 0;
   right: 0;
   z-index: 1000;
-  /* border-bottom: 1px solid #e0e0e0; */
 }
 
 .contact-bar .container {
@@ -52,30 +64,31 @@ hr {
 }
 
 .contact-info a {
-  color: #666;
+  color: var(--mediumGray);
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 5px;
   font-size: 13px;
+  font-family: var(--BodyFont);
 }
 
 .contact-info a:hover {
-  color: var(--logoGreen);
+  color: var(--primaryGreen);
 }
 
 .contact-info .email {
-  color: var(--logoGreen);
+  color: var(--primaryGreen);
 }
 
 .contact-info .phone {
-  color: var(--logoGreen);
+  color: var(--primaryGreen);
   font-weight: bold;
 }
 
 /* Main Navigation */
 .main-nav {
-  background: white;
+  background: var(--white);
   padding: 15px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: static;
@@ -104,7 +117,7 @@ hr {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: var(--darkGray);
   font-weight: 600;
   font-size: 16px;
   font-family: var(--BodyFont);
@@ -114,12 +127,11 @@ hr {
 }
 
 .nav-links a:hover {
-  color: var(--logoGreen);
+  color: var(--primaryGreen);
 }
 
 /* Hero Section */
 .hero {
-  /* background: var(--logoGreen); */
   background: linear-gradient(to top, #000000db 0%, #00745989 100%),
     url("/img/grass.jpg");
   background-size: cover;
@@ -129,7 +141,7 @@ hr {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: var(--white);
 }
 
 .hero-content h1 {
@@ -145,6 +157,7 @@ hr {
   font-family: var(--BodyFont);
   margin-bottom: 30px;
   opacity: 0.9;
+  color: var(--white);
 }
 
 .hero-content .tagline {
@@ -152,6 +165,7 @@ hr {
   margin-bottom: 40px;
   font-family: var(--BodyFont);
   font-style: italic;
+  color: var(--white);
 }
 
 .cta-buttons {
@@ -176,31 +190,32 @@ hr {
 }
 
 .btn-primary {
-  background: #fff;
-  color: var(--logoGreen);
+  background: var(--white);
+  color: var(--primaryGreen);
 }
-
 .btn-primary:hover {
-  background: #f0f0f0;
+  background: linear-gradient(135deg, var(--primaryGreen), var(--darkGreen));
+  color: var(--white);
   transform: translateY(-2px);
 }
 
 .btn-secondary {
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: var(--white);
+  border: 2px solid var(--white);
 }
 
 .btn-secondary:hover {
-  background: white;
-  color: var(--logoGreen);
+  background: var(--white);
+  color: var(--primaryGreen);
   transform: translateY(-2px);
 }
 
 /* Services Preview Section */
 .services-preview {
   padding: 100px 0;
-  background: #f8f9fa;
+  /* background: var(--lightGray); */
+  background: linear-gradient(135deg, var(--primaryGreen), var(--darkGreen));
 }
 
 .container {
@@ -215,16 +230,17 @@ hr {
 }
 
 .section-title h2 {
-font-family: var(--HeaderFont);
+  font-family: var(--HeaderFont);
   font-size: 3rem;
-  color: var(--logoGreen);
+  /* color: var(--primaryGreen); */
+  color: var(--white);
   margin-bottom: 20px;
 }
 
 .section-title p {
   font-size: 1.2rem;
   font-family: var(--BodyFont);
-  color: #666;
+  color: var(--white);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -237,7 +253,7 @@ font-family: var(--HeaderFont);
 }
 
 .service-card {
-  background: rgba(0, 0, 0, 0);
+  /* background: var(--white); */
   padding: 30px;
   border-radius: 15px;
   /* box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1); */
@@ -255,7 +271,9 @@ font-family: var(--HeaderFont);
 .service-icon {
   width: 60px;
   height: 60px;
-  background: var(--logoGreen);
+  background: var(--primaryGreen);
+  /* background: linear-gradient(135deg, var(--primaryGreen), var(--mediumGreen)); */
+
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -268,22 +286,32 @@ font-family: var(--HeaderFont);
 .service-card h3 {
   font-size: 1.4rem;
   margin-bottom: 12px;
-  color: var(--logoGreen);
+  /* color: var(--primaryGreen); */
+  color: var(--white);
   font-weight: 600;
+  font-family: var(--HeaderFont);
 }
 
 .service-card p {
-  color: #666;
+  /* color: var(--mediumGray); */
+  color: var(--white);
   line-height: 1.6;
   font-size: 14px;
+  font-family: var(--BodyFont);
 }
 
 /* Why Choose Us Section */
 .why-choose-us {
   padding: 100px 0;
-  background: white;
+  background: var(--white);
 }
 
+.why-choose-us .section-title h2 {
+  color: var(--darkGray);
+}
+.why-choose-us .section-title p {
+  color: var(--mediumGray);
+}
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -298,49 +326,87 @@ font-family: var(--HeaderFont);
 .feature-icon {
   width: 60px;
   height: 60px;
-  background: var(--logoGreen);
+  background: var(--primaryGreen);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  color: white;
+  color: var(--white);
   font-size: 1.5rem;
 }
 
 .feature h3 {
   font-size: 1.3rem;
   margin-bottom: 15px;
-  color: #333;
+  color: var(--darkGray);
+  font-family: var(--HeaderFont);
 }
 
 .feature p {
-  color: #666;
+  color: var(--mediumGray);
+  font-family: var(--BodyFont);
 }
 
 /* CTA Section */
 .cta-section {
-  background: var(--logoGreen);
-  color: white;
+  background: var(--primaryGreen);
+  color: var(--white);
   padding: 80px 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0,10 Q25,0 50,10 T100,10 V20 H0 Z" fill="rgba(170,255,235,0.1)"/></svg>');
+
+  background-size: 200px 40px;
+  animation: wave 10s linear infinite;
+}
+@keyframes wave {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 200px;
+  }
 }
 
 .cta-section h2 {
+  font-family: var(--HeaderFont);
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
 .cta-section p {
+  font-family: var(--BodyFont);
   font-size: 1.2rem;
   margin-bottom: 40px;
   opacity: 0.9;
 }
 
+.cta-section .btn-primary {
+  color: var(--darkGreen);
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section .btn-primary:hover {
+  background: var(--darkGreen);
+  color: var(--white);
+}
+
 /* Footer */
 .footer {
-  background: #1a1a1a;
-  color: white;
+  background: var(--black);
+
+  color: var(--white);
   padding: 60px 0 20px;
 }
 
@@ -353,26 +419,29 @@ font-family: var(--HeaderFont);
 
 .footer-section h3 {
   margin-bottom: 20px;
-  color: var(--logoGreen);
+  color: var(--primaryGreen);
+  font-family: var(--HeaderFont);
 }
 
 .footer-section p,
 .footer-section a {
-  color: #ccc;
+  color: var(--lightGray);
   text-decoration: none;
   margin-bottom: 10px;
   display: block;
+  font-family: var(--BodyFont);
 }
 
 .footer-section a:hover {
-  color: var(--logoGreen);
+  color: var(--lightGreen);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
-  border-top: 1px solid #333;
-  color: #999;
+  border-top: 1px solid var(--darkGray);
+  color: var(--lightGray);
+  font-family: var(--BodyFont);
 }
 
 /* Mobile Responsiveness */
