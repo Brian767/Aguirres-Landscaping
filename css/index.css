@@ -79,6 +79,7 @@ hr {
 
 .contact-info .email {
   color: var(--primaryGreen);
+  font-weight: bold;
 }
 
 .contact-info .phone {
