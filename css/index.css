@@ -302,6 +302,15 @@ hr {
   font-family: var(--BodyFont);
 }
 
+.service-buttons{
+  margin-top: 40px;
+  text-align: center;
+
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+}
 /* Why Choose Us Section */
 .why-choose-us {
   padding: 100px 0;
@@ -317,6 +326,14 @@ hr {
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  .services .btn-primary {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .services .btn-primary {
+    margin-top: 40px;
+    text-align: center;
+  }
   gap: 40px;
   margin-top: 60px;
 }
