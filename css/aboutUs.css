@@ -1,21 +1,5 @@
 /* About Page Specific Styles */
 
-/* Navigation Active State */
-.nav-links a.active {
-  color: var(--primaryGreen);
-  position: relative;
-}
-
-.nav-links a.active::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--primaryGreen);
-}
-
 /* Page Header */
 .page-header {
   background: linear-gradient(135deg, var(--primaryGreen), var(--darkGreen));

@@ -36,6 +36,22 @@ hr {
   border: none;
 }
 
+/* Navigation Active State */
+.nav-links a.active {
+  color: var(--primaryGreen);
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primaryGreen);
+}
+
 /* Top Contact Bar - Sticky */
 .contact-bar {
   background: rgba(255, 255, 255, 0);

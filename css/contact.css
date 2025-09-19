@@ -1,21 +1,5 @@
 /* Contact Page Specific Styles */
 
-/* Navigation Active State */
-.nav-links a.active {
-  color: var(--primaryGreen);
-  position: relative;
-}
-
-.nav-links a.active::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--primaryGreen);
-}
-
 /* Page Header */
 .page-header {
   background: linear-gradient(135deg, var(--primaryGreen), var(--darkGreen));
@@ -270,13 +254,15 @@
 }
 
 @keyframes dots {
-  0%, 20% {
+  0%,
+  20% {
     content: ".";
   }
   40% {
     content: "..";
   }
-  60%, 100% {
+  60%,
+  100% {
     content: "...";
   }
 }
@@ -287,7 +273,7 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .contact-info-sidebar {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -299,29 +285,29 @@
   .page-header h1 {
     font-size: 2.5rem;
   }
-  
+
   .page-header p {
     font-size: 1.1rem;
     padding: 0 20px;
   }
-  
+
   .contact-form-wrapper {
     padding: 25px;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-  
+
   .contact-info-sidebar {
     grid-template-columns: 1fr;
   }
-  
+
   .info-card {
     padding: 20px;
   }
-  
+
   .contact-form .btn {
     width: 100%;
     text-align: center;
