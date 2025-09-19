@@ -1,7 +1,9 @@
-// Gallery filtering functionality
+// gallery.js 
+
 document.addEventListener('DOMContentLoaded', function() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const projectPhotos = document.querySelectorAll('.project-photo');
+  const projectsContainer = document.querySelector('.projects-container');
   
   // Add click event to filter buttons
   filterButtons.forEach(button => {
@@ -33,21 +35,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Optional: Add click to expand photo functionality
   projectPhotos.forEach(photo => {
     photo.addEventListener('click', function() {
-      // You can add modal functionality here if needed
       const category = this.querySelector('.photo-category').textContent;
       console.log('Clicked on:', category);
       // For now, just a simple animation
       this.style.transform = 'scale(0.95)';
       setTimeout(() => {
         this.style.transform = '';
-      }, 200);
+      }, 0);
     });
   });
   
-//   Add smooth scroll for internal linkss
+  // Add smooth scroll for internal links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
