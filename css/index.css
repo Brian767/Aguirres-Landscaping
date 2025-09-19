@@ -150,7 +150,7 @@ hr {
 /* Hero Section */
 .hero {
   background: linear-gradient(to top, #000000db 0%, #00745989 100%),
-    url("/img/grass.jpg");
+    url("../img/grass.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
