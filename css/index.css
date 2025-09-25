@@ -77,6 +77,7 @@ hr {
 .contact-info {
   display: flex;
   gap: 30px;
+  align-items: center;
 }
 
 .contact-info a {
@@ -98,9 +99,11 @@ hr {
   font-weight: bold;
 }
 
-.contact-info .phone {
-  color: var(--primaryGreen);
-  font-weight: bold;
+.contact-message {
+  color: var(--mediumGray);
+  font-size: 13px;
+  font-family: var(--BodyFont);
+  font-style: italic;
 }
 
 /* Main Navigation */
@@ -231,7 +234,6 @@ hr {
 /* Services Preview Section */
 .services-preview {
   padding: 100px 0;
-  /* background: var(--lightGray); */
   background: linear-gradient(135deg, var(--primaryGreen), var(--darkGreen));
 }
 
@@ -249,7 +251,6 @@ hr {
 .section-title h2 {
   font-family: var(--HeaderFont);
   font-size: 3rem;
-  /* color: var(--primaryGreen); */
   color: var(--white);
   margin-bottom: 20px;
 }
@@ -270,10 +271,8 @@ hr {
 }
 
 .service-card {
-  /* background: var(--white); */
   padding: 30px;
   border-radius: 15px;
-  /* box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1); */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   align-items: flex-start;
@@ -286,13 +285,6 @@ hr {
 }
 
 .service-icon {
-  /* width: 60px;
-  height: 60px; */
-  /* background: var(--primaryGreen); */
-  /* background: linear-gradient(135deg, var(--primaryGreen), var(--mediumGreen)); */
-  /* background: var(--white); */
-
-  /* border-radius: 50%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -304,14 +296,12 @@ hr {
 .service-card h3 {
   font-size: 1.4rem;
   margin-bottom: 12px;
-  /* color: var(--primaryGreen); */
   color: var(--white);
   font-weight: 600;
   font-family: var(--HeaderFont);
 }
 
 .service-card p {
-  /* color: var(--mediumGray); */
   color: var(--white);
   line-height: 1.6;
   font-size: 14px;
@@ -321,12 +311,11 @@ hr {
 .service-buttons{
   margin-top: 40px;
   text-align: center;
-
   display: flex;
   gap: 20px;
   justify-content: center;
-  /* flex-wrap: wrap; */
 }
+
 /* Why Choose Us Section */
 .why-choose-us {
   padding: 100px 0;
@@ -339,17 +328,10 @@ hr {
 .why-choose-us .section-title p {
   color: var(--mediumGray);
 }
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  .services .btn-primary {
-    margin-top: 40px;
-    text-align: center;
-  }
-  .services .btn-primary {
-    margin-top: 40px;
-    text-align: center;
-  }
   gap: 40px;
   margin-top: 60px;
 }
@@ -361,7 +343,6 @@ hr {
 .feature-icon {
   width: 60px;
   height: 60px;
-  /* background: var(--primaryGreen); */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -440,7 +421,6 @@ hr {
 /* Footer */
 .footer {
   background: var(--black);
-
   color: var(--white);
   padding: 60px 0 20px;
 }
