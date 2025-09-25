@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Show error message
             showMessage(
-                'Sorry, there was an error sending your message. Please try again or call us directly at (720) 290-2605.',
+                'Sorry, there was an error sending your message. Please try again.',
                 'error'
             );
         } finally {
