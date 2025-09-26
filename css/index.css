@@ -364,6 +364,63 @@ hr {
   font-family: var(--BodyFont);
 }
 
+/* Customer Reviews Section */
+.customer-reviews {
+  padding: 100px 0;
+  background: var(--lightGray);
+}
+
+.customer-reviews .section-title h2 {
+  color: var(--darkGray);
+}
+
+.customer-reviews .section-title p {
+  color: var(--mediumGray);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.review-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.review-stars {
+  font-size: 1.5rem;
+  color: var(--mediumGreen);
+  margin-bottom: 20px;
+}
+
+.review-text {
+  font-family: var(--BodyFont);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--darkGray);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.reviewer-name {
+  font-family: var(--HeaderFont);
+  font-weight: 600;
+  color: var(--primaryGreen);
+  font-size: 1rem;
+}
+
 /* CTA Section */
 .cta-section {
   background: var(--primaryGreen);
@@ -523,6 +580,14 @@ hr {
 
   .service-card p {
     font-size: 13px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-card {
+    padding: 25px;
   }
 }
 
