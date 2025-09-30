@@ -82,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
             phone: formData.get('phone') || 'Not provided',
             service: formData.get('service') || 'Not specified',
             message: formData.get('message'),
-            newsletter: formData.get('newsletter') ? 'Yes' : 'No',
             to_email: 'brianramirezbro@gmail.com', // Your email
             reply_to: formData.get('email')
         };
