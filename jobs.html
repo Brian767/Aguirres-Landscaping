@@ -59,21 +59,132 @@
     <!-- Page Header -->
     <section class="page-header">
       <div class="container">
-        <h1>Interested in Working with Us?</h1>
-        <p>Call for more information</p>
-        <a href="jobs.html" class="contact-button">Fill Out the Form</a>
+        <h1>Join Our Team</h1>
+        <p>
+          Interested in working with Colorado's premier landscaping service?
+        </p>
       </div>
     </section>
 
-    <!-- Jobs Image Section -->
-    <section class="jobs-image-section">
+    <!-- Job Application Section -->
+    <section class="job-application-section">
       <div class="container">
-        <div class="jobs-image-container">
-          <img
-            src="./img/AguirreLandscapingServLogo.png"
-            alt="Join Aguirre's Landscaping Team"
-            class="jobs-image"
-          />
+        <div class="application-grid">
+          <!-- Application Form -->
+          <div class="application-form-wrapper">
+            <h2>Apply Now</h2>
+            <p>
+              We're always looking for dedicated professionals to join our
+              landscaping team. Fill out the form below to get started.
+            </p>
+
+            <form id="jobApplicationForm" class="application-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="applicantFirstName">First Name *</label>
+                  <input
+                    type="text"
+                    id="applicantFirstName"
+                    name="applicantFirstName"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="applicantLastName">Last Name *</label>
+                  <input
+                    type="text"
+                    id="applicantLastName"
+                    name="applicantLastName"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="applicantEmail">Email *</label>
+                  <input
+                    type="email"
+                    id="applicantEmail"
+                    name="applicantEmail"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="applicantPhone">Phone *</label>
+                  <input
+                    type="tel"
+                    id="applicantPhone"
+                    name="applicantPhone"
+                    placeholder="(xxx) xxx-xxxx"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="availability">Availability</label>
+                <textarea
+                  id="availability"
+                  name="availability"
+                  rows="3"
+                  placeholder="Please describe your availability (days, hours, seasonal preferences, etc.)"
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="resume">Resume (Optional)</label>
+                <input
+                  type="file"
+                  id="resume"
+                  name="resume"
+                  accept=".pdf,.doc,.docx,.txt"
+                />
+                <small>Accepted formats: PDF, DOC, DOCX, TXT (Max 5MB)</small>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                Submit Application
+              </button>
+
+              <div id="applicationMessage" class="form-message"></div>
+            </form>
+          </div>
+
+          <!-- Company Info Sidebar -->
+          <div class="company-info-sidebar">
+            <div class="info-card">
+              <h3>Why Work with Us?</h3>
+              <ul>
+                <li>15+ years of industry experience</li>
+                <li>Flexible scheduling options</li>
+                <li>Bilingual workplace (English/Spanish)</li>
+                <li>Working Outdoors</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>What We Look For</h3>
+              <ul>
+                <li>Reliable and punctual</li>
+                <li>Strong work ethic</li>
+                <li>Physical ability to work outdoors</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Questions?</h3>
+              <p>
+                Have questions about working with us? Send us an email and we'll
+                get back to you within 3 business days.
+              </p>
+              <a
+                href="mailto:aguirreservice@yahoo.com"
+                class="btn btn-secondary"
+                >Email Us</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -125,5 +236,6 @@
     </footer>
 
     <script src="./js/index.js"></script>
+    <script src="./js/jobs.js"></script>
   </body>
 </html>
