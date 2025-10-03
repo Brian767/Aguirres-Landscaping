@@ -1,41 +1,37 @@
-// jobs.js - Job application form functionality
-
+// jobs.js (updated)
 document.addEventListener("DOMContentLoaded", function () {
-  const jobApplicationForm = document.getElementById("jobApplicationForm");
-  const applicationMessage = document.getElementById("applicationMessage");
-  const submitButton = jobApplicationForm.querySelector(
-    'button[type="submit"]'
-  );
+  const jobForm = document.getElementById("jobApplicationForm");
+  const formMessage = document.getElementById("applicationMessage");
+  const submitButton = jobForm.querySelector('button[type="submit"]');
   const originalButtonText = submitButton.textContent;
 
-  // Form validation
-  function validateForm(formData) {
-    const email = formData.get("applicantEmail");
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Helper to show status
+  function showMessage(message, type = "info") {
+    formMessage.textContent = message;
+    formMessage.className = `form-message ${type}`;
+    formMessage.style.display = "block";
+    if (type === "success") {
+      setTimeout(() => (formMessage.style.display = "none"), 6000);
+    }
+  }
 
+  function validateFormData(formData) {
+    const email = (formData.get("applicantEmail") || "").trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       showMessage("Please enter a valid email address.", "error");
       return false;
     }
-
+    // basic phone digits check (10 digits)
+    const phone = (formData.get("applicantPhone") || "").replace(/\D/g, "");
+    if (phone && phone.length > 0 && phone.length < 10) {
+      showMessage("Please enter a valid 10-digit phone number.", "error");
+      return false;
+    }
     return true;
   }
 
-  // Show message function
-  function showMessage(message, type) {
-    applicationMessage.textContent = message;
-    applicationMessage.className = `form-message ${type}`;
-    applicationMessage.style.display = "block";
-
-    // Auto-hide message after 5 seconds for success
-    if (type === "success") {
-      setTimeout(() => {
-        applicationMessage.style.display = "none";
-      }, 5000);
-    }
-  }
-
-  // Format phone number
+  // phone formatting 
   function formatPhoneNumber(value) {
     const phone = value.replace(/\D/g, "");
     if (phone.length === 0) return "";
@@ -43,140 +39,77 @@ document.addEventListener("DOMContentLoaded", function () {
     if (phone.length <= 6) return `(${phone.slice(0, 3)}) ${phone.slice(3)}`;
     return `(${phone.slice(0, 3)}) ${phone.slice(3, 6)}-${phone.slice(6, 10)}`;
   }
-
-  // Phone number formatting on input
   const phoneInput = document.getElementById("applicantPhone");
   if (phoneInput) {
-    phoneInput.addEventListener("input", function (e) {
-      const formatted = formatPhoneNumber(e.target.value);
-      e.target.value = formatted;
+    phoneInput.addEventListener("input", (e) => {
+      e.target.value = formatPhoneNumber(e.target.value);
     });
   }
 
-  // File size validation
-  const resumeInput = document.getElementById("resume");
-  if (resumeInput) {
-    resumeInput.addEventListener("change", function (e) {
-      const file = e.target.files[0];
-      if (file) {
-        const maxSize = 5 * 1024 * 1024; // 5MB in bytes
-        if (file.size > maxSize) {
-          showMessage(
-            "File size must be less than 5MB. Please choose a smaller file.",
-            "error"
-          );
-          e.target.value = "";
-          return;
-        }
-
-        const allowedTypes = [
-          "application/pdf",
-          "application/msword",
-          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-          "text/plain",
-        ];
-        if (!allowedTypes.includes(file.type)) {
-          showMessage("Please upload a PDF, DOC, DOCX, or TXT file.", "error");
-          e.target.value = "";
-          return;
-        }
-      }
-    });
-  }
-
-  // Handle form submission
-  jobApplicationForm.addEventListener("submit", async function (e) {
+  jobForm.addEventListener("submit", async function (e) {
     e.preventDefault();
+    formMessage.style.display = "none";
 
-    // Clear previous messages
-    applicationMessage.style.display = "none";
+    const formData = new FormData(jobForm);
 
-    // Get form data
-    const formData = new FormData(jobApplicationForm);
+    if (!validateFormData(formData)) return;
 
-    // Validate form
-    if (!validateForm(formData)) {
-      return;
+    // file checks
+    const resumeFile = formData.get("resume");
+    if (resumeFile && resumeFile.size > 0) {
+      const maxBytes = 5 * 1024 * 1024; // 5MB
+      if (resumeFile.size > maxBytes) {
+        showMessage("Resume is too large (max 5MB).", "error");
+        return;
+      }
+      const allowed = ["application/pdf", "application/msword",
+                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                       "text/plain"];
+      if (resumeFile.type && !allowed.includes(resumeFile.type)) {
+        showMessage("Unsupported resume file type.", "error");
+        return;
+      }
     }
 
-    // Disable submit button and show loading state
+    // disable button
     submitButton.disabled = true;
     submitButton.textContent = "Submitting...";
     submitButton.classList.add("loading");
 
     try {
-      // For now, just simulate form submission
-      // In a real implementation, you would send this to your server or email service
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate API call
+      // Use sendForm to include file uploads automatically.
+      // SERVICE_ID and TEMPLATE_ID as you had them.
+      const SERVICE_ID = "service_q4ctasa";
+      const TEMPLATE_ID = "template_webj6gc";
 
-      // Show success message
-      showMessage(
-        "Thank you for your application! We'll review your submission and get back to you within 3 business days.",
-        "success"
-      );
+      // Optionally include additional template params (these are also sent when using sendForm)
+      const templateParams = {
+        applicant_name: `${formData.get("applicantFirstName")} ${formData.get("applicantLastName")}`,
+        to_email: "brianramirezbro@gmail.com",
+        reply_to: formData.get("applicantEmail"),
+      };
 
-      // Reset form
-      jobApplicationForm.reset();
-
-      // Optional: Track form submission
-      if (typeof gtag !== "undefined") {
-        gtag("event", "form_submit", {
-          event_category: "Jobs",
-          event_label: "Job Application",
-        });
-      }
-    } catch (error) {
-      console.error("Error submitting application:", error);
-
-      // Show error message
-      showMessage(
-        "Sorry, there was an error submitting your application. Please try again or email us directly at aguirreservice@yahoo.com.",
-        "error"
-      );
+      // emailjs.sendForm(service, template, formElement, ???options)
+      // If you used emailjs.init() earlier, you can omit the 4th param.
+      const resp = await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, jobForm, /* options if needed */);
+      console.log("EmailJS response:", resp);
+      showMessage("Thank you for applying! We will review your application and contact you soon.", "success");
+      jobForm.reset();
+    } catch (err) {
+      console.error("Error sending application:", err);
+      showMessage("Sorry, there was a problem submitting your application. Please try again later.", "error");
     } finally {
-      // Re-enable submit button
       submitButton.disabled = false;
       submitButton.textContent = originalButtonText;
       submitButton.classList.remove("loading");
     }
   });
 
-  // Form field validation on blur
-  const requiredFields = jobApplicationForm.querySelectorAll("[required]");
+  // highlight required fields
+  const requiredFields = jobForm.querySelectorAll("[required]");
   requiredFields.forEach((field) => {
     field.addEventListener("blur", function () {
-      if (!this.value.trim()) {
-        this.style.borderColor = "#ff6b6b";
-      } else {
-        this.style.borderColor = "#ddd";
-      }
+      this.style.borderColor = this.value.trim() ? "#ddd" : "#ff6b6b";
     });
-  });
-
-  // Character counter for text areas
-  const textAreas = jobApplicationForm.querySelectorAll("textarea");
-  textAreas.forEach((textArea) => {
-    const maxLength = 500;
-    const counterDiv = document.createElement("div");
-    counterDiv.className = "character-counter";
-    counterDiv.style.fontSize = "12px";
-    counterDiv.style.color = "#666";
-    counterDiv.style.marginTop = "5px";
-    counterDiv.style.textAlign = "right";
-    textArea.parentElement.appendChild(counterDiv);
-
-    function updateCounter() {
-      const remaining = maxLength - textArea.value.length;
-      counterDiv.textContent = `${remaining} characters remaining`;
-
-      if (remaining < 50) {
-        counterDiv.style.color = "#ff6b6b";
-      } else {
-        counterDiv.style.color = "#666";
-      }
-    }
-
-    textArea.addEventListener("input", updateCounter);
-    updateCounter();
   });
 });
