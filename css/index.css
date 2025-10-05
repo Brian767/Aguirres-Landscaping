@@ -481,6 +481,11 @@ hr {
   color: var(--white);
 }
 
+.cta-section .btn-secondary {
+  position: relative;
+  z-index: 1;
+}
+
 /* Footer */
 .footer {
   background: var(--black);
