@@ -4,19 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Photo Gallery - Aguirre's Landscaping Services</title>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/gallery.css" />
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body>
-    <!-- Top Contact Bar -->
-    <div class="contact-bar">
+    <!-- Contact Bar -->
+    <header class="contact-bar">
       <div class="container">
         <div class="contact-info">
           <a href="mailto:aguirreservice@yahoo.com" class="email">
@@ -25,17 +29,18 @@
               alt="Mail icon"
               width="32"
               height="32"
-            />aguirreservice@yahoo.com</a
-          >
-          <span class="contact-message"
-            >Leave your contact info and we'll call or email you back
-            <span class="spanish-contact-message">• Se habla español </span>
+            />
+            aguirreservice@yahoo.com
+          </a>
+          <span class="contact-message">
+            Leave your contact info and we'll call or email you back
+            <span class="spanish-contact-message">• Se habla español</span>
           </span>
         </div>
       </div>
-    </div>
+    </header>
 
-    <!-- Main Navigation -->
+    <!-- Navigation -->
     <nav class="main-nav">
       <div class="container">
         <a href="index.html">
@@ -45,6 +50,7 @@
             class="logo"
           />
         </a>
+
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="aboutUs.html">About Us</a></li>
@@ -55,218 +61,154 @@
         </ul>
       </div>
     </nav>
-    <hr />
 
-    <!-- Page Header -->
-    <section class="page-header">
-      <div class="container">
-        <h1>Our Work Gallery</h1>
-        <p>
-          See the transformation and quality craftsmanship that sets Aguirre's
-          Landscaping apart
-        </p>
-      </div>
-    </section>
-
-    <!-- Gallery Filters -->
-    <section class="gallery-filters">
-      <div class="container">
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">ALL</button>
-          <button class="filter-btn" data-filter="outdoor-living">
-            OUTDOOR LIVING
-          </button>
-          <button class="filter-btn" data-filter="walkways">WALKWAYS</button>
-          <button class="filter-btn" data-filter="lawn-design">
-            LAWN & PLANT DESIGN
-          </button>
-          <button class="filter-btn" data-filter="water-features">
-            WATER FEATURES
-          </button>
-          <button class="filter-btn" data-filter="retaining-walls">
-            Hardscaping
-          </button>
+    <main>
+      <!-- Page Header -->
+      <section class="page-header">
+        <div class="container">
+          <h1>Our Work Gallery</h1>
+          <p>
+            See the transformation and quality craftsmanship that sets Aguirre's
+            Landscaping apart
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Gallery Grid -->
-    <section class="gallery-grid">
-      <div class="container">
-        <div class="projects-container">
-          <!-- Project 1: Lawn & Plant Design -->
-          <div class="project-photo" data-category="lawn-design">
-            <div
-              class="photo-image"
-              style="
-                background-image: url('./img/mow1.jpeg');
-                background-color: #43c8a9;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #fff;
-                font-size: 1.5rem;
-              "
-            >
-              <!-- Photo Here -->
-              <div class="photo-overlay">
-                <div class="photo-category">Lawn & Plant Design</div>
-              </div>
-            </div>
-          </div>
-
-            <!-- Project 2: Outdoor Living -->
-            <div class="project-photo" data-category="outdoor-living">
-            <div
-              class="photo-image"
-              style="
-              background-image: url('./img/outdoor_repair1.jpeg');
-              background-color: #43c8a9;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              color: #fff;
-              font-size: 1.5rem;
-              "
-            >
-              <!-- Photo Here -->
-              <div class="photo-overlay">
-              <div class="photo-category">Outdoor Living</div>
-              </div>
-            </div>
-            </div>
-
-          <!-- Project 3: Walkways -->
-          <div class="project-photo" data-category="walkways">
-            <div
-              class="photo-image"
-              style="
-                background-color: #43c8a9;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #fff;
-                font-size: 1.5rem;
-              "
-            >
-              Photo Here
-              <div class="photo-overlay">
-                <div class="photo-category">Walkways</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4: Water Features -->
-          <div class="project-photo" data-category="water-features">
-            <div
-              class="photo-image"
-              style="
-                background-color: #43c8a9;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #fff;
-                font-size: 1.5rem;
-              "
-            >
-              Photo Here
-              <div class="photo-overlay">
-                <div class="photo-category">Water Features</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5: Retaining Walls -->
-          <div class="project-photo" data-category="retaining-walls">
-            <div
-              class="photo-image"
-              style="
-                background-color: #43c8a9;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #fff;
-                font-size: 1.5rem;
-              "
-            >
-              Photo Here
-              <div class="photo-overlay">
-                <div class="photo-category">Retaining Walls</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 6: Spring Cleanup -->
-          <div class="project-photo" data-category="lawn-design">
-            <div
-              class="photo-image"
-              style="
-                background-color: #43c8a9;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #fff;
-                font-size: 1.5rem;
-              "
-            >
-              Photo Here
-              <div class="photo-overlay">
-                <div class="photo-category">Lawn & Plant Design</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 7: Fire Pit Area -->
-          <div class="project-photo" data-category="outdoor-living">
-            <div
-              class="photo-image"
-              style="
-                background-color: #43c8a9;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #fff;
-                font-size: 1.5rem;
-              "
-            >
-              Photo Here
-              <div class="photo-overlay">
-                <div class="photo-category">Outdoor Living</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 8: Garden Pathway -->
-          <div class="project-photo" data-category="walkways">
-            <div
-              class="photo-image"
-              style="
-                background-color: #43c8a9;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #fff;
-                font-size: 1.5rem;
-              "
-            >
-              Photo Here
-              <div class="photo-overlay">
-                <div class="photo-category">Walkways</div>
-              </div>
-            </div>
+      <!-- Filters -->
+      <section class="gallery-filters">
+        <div class="container">
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="outdoor-living">
+              Outdoor Living
+            </button>
+            <button class="filter-btn" data-filter="walkways">Walkways</button>
+            <button class="filter-btn" data-filter="lawn-design">
+              Lawn & Plant Design
+            </button>
+            <button class="filter-btn" data-filter="water-features">
+              Water Features
+            </button>
+            <button class="filter-btn" data-filter="hardscaping">
+              Hardscaping
+            </button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Call to Action -->
+      <!-- Gallery -->
+      <section class="gallery-grid">
+        <div class="container">
+          <div class="projects-container">
+            <!-- Project Brickhouse Mowing-->
+            <div class="project-photo" data-category="lawn-design" data-images="./img/brickHouseMow.jpeg">
+              <img src="./img/brickHouseMow.jpeg" alt="Lawn & Plant Design project" class="project-img"/>
+              <div class="photo-overlay">
+                <span class="photo-category">Lawn & Plant Design</span>
+              </div>
+            </div>
+
+            <!-- Project White Rocks Hardscaping 1-->
+            <div class="project-photo" data-category="hardscaping" data-images="./img/whiteRocksHardscaping1.jpeg,./img/whiteRocksHardscaping2.jpeg">
+              <img src="./img/whiteRocksHardscaping1.jpeg" alt="Hardscaping project" class="project-img"/>
+              <div class="photo-overlay">
+                <span class="photo-category">Hardscaping</span>
+              </div>
+            </div>
+
+            <!-- Project Sprinkler Repair 1-->
+            <div class="project-photo" data-category="water-features" data-images="./img/sprinkler_Repair_Before.jpeg,./img/sprinkler_Repair2.jpeg,./img/sprinkler_Repair3.jpeg,./img/sprinkler_Repair_Final.jpeg">
+              <img src="./img/sprinkler_Repair_Final.jpeg" alt="Sprinkler Repair project" class="project-img"/>
+              <div class="photo-overlay">
+                <span class="photo-category">Water Features</span>
+              </div>
+            </div>
+
+            <!-- Project Brickhouse Mowing-->
+            <div class="project-photo" data-category="lawn-design" data-images="./img/houseMowing.jpeg">
+              <img src="./img/houseMowing.jpeg" alt="Lawn & Plant Design project" class="project-img"/>
+              <div class="photo-overlay">
+                <span class="photo-category">Lawn & Plant Design</span>
+              </div>
+            </div>
+
+            <!-- Project Outdoor Living Repair -->
+            <div class="project-photo" data-category="outdoor-living" data-images="./img/outdoor_Living1.jpeg,./img/outdoor_Living2.jpeg,./img/outdoor_Living3.jpeg">
+              <img src="./img/outdoor_Living1.jpeg" alt="Outdoor Living project" class="project-img"/>
+              <div class="photo-overlay">
+                <span class="photo-category">Outdoor Living</span>
+              </div>
+            </div>
+
+            <!-- Project Mowing-->
+            <div class="project-photo" data-category="lawn-design" data-images="./img/mow2.jpeg">
+              <img src="./img/mow2.jpeg" alt="Lawn & Plant Design project" class="project-img"/>
+              <div class="photo-overlay">
+                <span class="photo-category">Lawn & Plant Design</span>
+              </div>
+            </div>
+
+            <!-- Project Mowing-->
+            <div class="project-photo" data-category="lawn-design" data-images="./img/mow3.jpeg">
+              <img src="./img/mow3.jpeg" alt="Lawn & Plant Design project" class="project-img"/>
+              <div class="photo-overlay">
+                <span class="photo-category">Lawn & Plant Design</span>
+              </div>
+            </div>
+
+            <!-- Project Sprinkler 1-->
+            <div class="project-photo" data-category="water-features" data-images="./img/sprinkler.JPG">
+              <img src="./img/sprinkler.JPG" alt="Sprinkler project" class="project-img"/>
+              <div class="photo-overlay">
+                <span class="photo-category">Water Features</span>
+              </div>
+            </div>
+
+            <!-- Project Mowing-->
+            <div class="project-photo" data-category="lawn-design" data-images="./img/mow4.jpeg">
+              <img src="./img/mow4.jpeg" alt="Lawn & Plant Design project" class="project-img"/>
+              <div class="photo-overlay">
+                <span class="photo-category">Lawn & Plant Design</span>
+              </div>
+            </div>
+
+            <!-- Project Sprinkler 2-->
+            <div class="project-photo" data-category="water-features" data-images="./img/sprinkler2.JPG">
+              <img src="./img/sprinkler2.JPG" alt="Sprinkler project" class="project-img"/>
+              <div class="photo-overlay">
+                <span class="photo-category">Water Features</span>
+              </div>
+            </div>
+
+            <!-- Repeat projects here -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+      <div class="modal-backdrop"></div>
+
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">&times;</button>
+
+        <div class="modal-image-wrapper">
+          <img id="modalImage" src="" alt="Expanded gallery image" />
+        </div>
+
+        <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+        <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+        <div class="carousel-counter" id="carouselCounter"></div>
+      </div>
+    </div>
+
+    <!-- CTA -->
     <section class="cta-section">
       <div class="container">
         <h2>Ready to Transform Your Property?</h2>
-        <p>
-          Join our satisfied customers and experience the Aguirre's difference.
-          Contact us for your free estimate today!
-        </p>
+        <p>Contact us for your free estimate today!</p>
+
         <div class="cta-buttons">
           <a href="contact.html" class="btn btn-primary">Get Free Estimate</a>
           <a href="services.html" class="btn btn-secondary"
@@ -311,7 +253,6 @@
             <h3>Service Areas</h3>
             <p>Broomfield, Colorado</p>
             <p>Denver metro and surrounding areas</p>
-            <p>Contact us for availability in your area</p>
           </div>
         </div>
 
@@ -323,6 +264,7 @@
       </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="./js/index.js"></script>
     <script src="./js/gallery.js"></script>
   </body>
