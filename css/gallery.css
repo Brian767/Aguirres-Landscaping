@@ -197,20 +197,22 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0);
   color: #fff;
   border: none;
   font-size: 40px;
   width: 60px;
   height: 60px;
   cursor: pointer;
+  z-index: 3;
+  display: none;
 }
 
 .carousel-btn.prev {
-  left: -80px;
+  left: 12px;
 }
 .carousel-btn.next {
-  right: -80px;
+  right: 12px;
 }
 
 .carousel-counter {
@@ -234,6 +236,17 @@
   .projects-container {
     grid-template-columns: 1fr;
     padding: 0 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .carousel-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 32px;
+  }
+  .modal-content {
+    overflow: visible;
   }
 }
 

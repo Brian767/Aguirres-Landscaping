@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   /* ===============================
      FILTERING
   =============================== */
@@ -7,16 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projectPhotos = document.querySelectorAll(".project-photo");
 
-  filterButtons.forEach(button => {
+  filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const filter = button.dataset.filter;
 
       // Update active button
-      filterButtons.forEach(btn => btn.classList.remove("active"));
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
       button.classList.add("active");
 
       // Filter photos
-      projectPhotos.forEach(photo => {
+      projectPhotos.forEach((photo) => {
         const category = photo.dataset.category;
 
         if (filter === "all" || category === filter) {
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-
 
   /* ===============================
      MODAL / LIGHTBOX
@@ -46,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
 
   // Open modal when clicking a project
-  projectPhotos.forEach(photo => {
+  projectPhotos.forEach((photo) => {
     photo.addEventListener("click", () => {
       images = photo.dataset.images.split(",");
       currentIndex = 0;
@@ -83,13 +81,13 @@ document.addEventListener("DOMContentLoaded", () => {
      CAROUSEL CONTROLS
   =============================== */
 
-  prevBtn.addEventListener("click", e => {
+  prevBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     updateImage();
   });
 
-  nextBtn.addEventListener("click", e => {
+  nextBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     currentIndex = (currentIndex + 1) % images.length;
     updateImage();
@@ -102,15 +100,13 @@ document.addEventListener("DOMContentLoaded", () => {
   modalClose.addEventListener("click", closeModal);
   backdrop.addEventListener("click", closeModal);
 
-  document.addEventListener("keydown", e => {
+  document.addEventListener("keydown", (e) => {
     if (!modal.classList.contains("active")) return;
 
     if (e.key === "Escape") closeModal();
     if (e.key === "ArrowRight" && images.length > 1) nextBtn.click();
     if (e.key === "ArrowLeft" && images.length > 1) prevBtn.click();
   });
-
-});
 
   /* ===============================
      SWIPE SUPPORT (MOBILE)
@@ -121,11 +117,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const swipeThreshold = 50; // minimum swipe distance
 
-  modalImage.addEventListener("touchstart", e => {
+  modalImage.addEventListener("touchstart", (e) => {
     touchStartX = e.changedTouches[0].screenX;
   });
 
-  modalImage.addEventListener("touchend", e => {
+  modalImage.addEventListener("touchend", (e) => {
     touchEndX = e.changedTouches[0].screenX;
     handleSwipe();
   });
@@ -143,4 +139,4 @@ document.addEventListener("DOMContentLoaded", () => {
       prevBtn.click();
     }
   }
-
+});
