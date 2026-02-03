@@ -2,7 +2,9 @@
 
 /* Page Header */
 .page-header {
-  background: linear-gradient(135deg, var(--primaryGreen), var(--darkGreen));
+  background: url("../img/hardscapingFrontyard2.jpeg") no-repeat center center;
+  background-size: cover;
+  background-position: center;
   color: var(--white);
   padding: 120px 0 80px;
   text-align: center;
@@ -13,6 +15,7 @@
   font-size: 3.5rem;
   margin-bottom: 20px;
   font-weight: 700;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
 }
 
 .page-header p {
@@ -22,6 +25,7 @@
   max-width: 600px;
   margin: 0 auto 30px;
   line-height: 1.6;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
 }
 
 /* Job Application Section */

@@ -1,10 +1,11 @@
 /* Services Page 3-Column Layout Styles */
 
-
-
 /* Page Header */
 .page-header {
-  background: linear-gradient(135deg, var(--primaryGreen), var(--darkGreen));
+  background: url("../img/brickHouseMow.jpeg") no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  display: flex;
   color: var(--white);
   padding: 120px 0 80px;
   text-align: center;
@@ -15,6 +16,7 @@
   font-size: 3.5rem;
   margin-bottom: 20px;
   font-weight: 700;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
 }
 
 .page-header p {
@@ -24,6 +26,7 @@
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
 }
 
 /* All Services Section */
