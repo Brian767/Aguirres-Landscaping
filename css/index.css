@@ -158,11 +158,12 @@ hr {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(to top, #000000db 0%, #00745989 100%),
-    url("../img/grass.jpg");
+  /* background: linear-gradient(to top, #000000db 0%, #00745989 100%),
+    url("../img/grass.jpg"); */
+  background: url("../img/brickHouseMow.jpeg");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height:50vh;
   display: flex;
   align-items: center;
   justify-content: center;

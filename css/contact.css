@@ -41,6 +41,11 @@
 }
 
 /* Contact Form */
+
+iframe {
+width: 100%;
+height: 100%;
+}
 .contact-form-wrapper {
   background: var(--white);
   padding: 40px;
@@ -283,6 +288,11 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+
+  iframe {
+    width: 100%;
+    height: 600px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -315,5 +325,10 @@
   .contact-form .btn {
     width: 100%;
     text-align: center;
+  }
+
+  iframe {
+    width: 100%;
+    height: 600px;
   }
 }
